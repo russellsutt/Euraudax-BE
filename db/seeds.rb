@@ -1,8 +1,11 @@
 require 'rest-client'
-require 'byebug'
 
 User.destroy_all
 Route.destroy_all
+Comment.destroy_all
+Event.destroy_all
+Attendee.destroy_all
+
 
 strava_id = 8049727
 
