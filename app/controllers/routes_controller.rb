@@ -8,8 +8,8 @@ class RoutesController < ApplicationController
 
     def create
         route = Route.create(route_params)
-        if route.save?
-            render json: route, status: created
+        if route.save
+            render json: route, status: :created
         else
           render json: { error: 'failed to create route' }, status: :not_acceptable
         end
@@ -34,6 +34,6 @@ class RoutesController < ApplicationController
     private 
     
     def route_params
-        params.require(:route).permit()
+        params.require(:route).permit(:title, :description, :distance, :elevation, :estimated_time, :polyline, :user_id)
     end
 end

@@ -92,11 +92,11 @@ ActiveRecord::Schema.define(version: 7) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
-    t.string "firstname"
-    t.string "lastname"
+    t.string "firstname", default: ""
+    t.string "lastname", default: ""
     t.string "city", default: "New York City"
     t.string "state", default: "New York"
-    t.text "bio"
+    t.text "bio", default: ""
     t.string "pic", default: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
